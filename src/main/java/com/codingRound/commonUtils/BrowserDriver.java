@@ -15,6 +15,7 @@ public class BrowserDriver {
     public static WebDriver webDriver;
     public final static String CONFIG_PROPERTIES = "//gradle//wrapper//gradle-wrapper.properties";
 
+    @SuppressWarnings("restriction")
     public static void setDriverPath() throws Exception {
 	if (PlatformUtil.isMac()) {
 	    System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -28,7 +29,7 @@ public class BrowserDriver {
     }
 
     // This method is used to initialize the WebDriver object
-    public static void initialize() throws Exception {
+    public static void launchBrowser() throws Exception {
 
 	if (webDriver == null) {
 	    config = new Properties();

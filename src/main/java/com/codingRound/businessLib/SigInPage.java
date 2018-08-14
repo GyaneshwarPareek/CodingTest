@@ -13,16 +13,19 @@ public class SigInPage extends BrowserDriver {
     public WebDriverCommonUtils webDriverCommonUtils;
 
     public SigInPage() {
-	signInConstant = PageFactory.initElements(BrowserDriver.webDriver,
+	signInConstant = PageFactory.initElements(webDriver,
 		SignInConstant.class);
 	webDriverCommonUtils = new WebDriverCommonUtils();
     }
 
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() throws Exception {
 
-	webDriverCommonUtils.waitFor(5000);
+	webDriverCommonUtils.waitFor(3000);
 	webDriverCommonUtils.jsClick(signInConstant.getYourTripLink());
 	signInConstant.getSignInLink().click();
+	webDriverCommonUtils.switchToFrame(signInConstant.getFrameSignInBtn());
+	webDriverCommonUtils.waitForElementDisplayed(signInConstant
+		.getSignInButton());
 	signInConstant.getSignInButton().click();
 	String errors1 = signInConstant.getErrorMsg().getText();
 	Assert.assertTrue(errors1

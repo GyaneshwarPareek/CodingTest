@@ -11,8 +11,11 @@ public class SignInConstant {
     @FindBy(id = "SignIn")
     private WebElement signInLink;
 
-    @FindBy(id = "signInButton")
+    @FindBy(xpath = "//*[@id='signInButton']")
     private WebElement signInButton;
+
+    @FindBy(id = "modal_window")
+    private WebElement frameSignInBtn;
 
     @FindBy(id = "errors1")
     private WebElement errorMsg;
@@ -31,6 +34,10 @@ public class SignInConstant {
 
     public WebElement getErrorMsg() {
 	return errorMsg;
+    }
+
+    public WebElement getFrameSignInBtn() {
+	return frameSignInBtn;
     }
 
 }

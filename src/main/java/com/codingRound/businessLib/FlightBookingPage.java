@@ -25,7 +25,7 @@ public class FlightBookingPage extends BrowserDriver {
     public void testThatResultsAppearForAOneWayJourney() {
 
 	webDriverCommonUtils.waitFor(2000);
-	// flightBookingConstant.getTripType().click();
+	flightBookingConstant.getTripType().click();
 
 	flightBookingConstant.getFromField().clear();
 	flightBookingConstant.getFromField().sendKeys("Bangalore");
@@ -37,7 +37,7 @@ public class FlightBookingPage extends BrowserDriver {
 	originOptions.get(0).click();
 
 	flightBookingConstant.getToField().clear();
-	flightBookingConstant.getToField().sendKeys("Bangalore");
+	flightBookingConstant.getToField().sendKeys("Delhi");
 
 	// wait for the auto complete options to appear for the destination
 	webDriverCommonUtils.waitFor(2000);

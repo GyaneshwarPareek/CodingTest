@@ -18,9 +18,10 @@ public class HotelBookingPage extends BrowserDriver {
 	webDriverCommonUtils = new WebDriverCommonUtils();
     }
 
-    public void shouldBeAbleToSearchForHotels() {
-
+    public void shouldBeAbleToSearchForHotels() throws Exception {
 	hotelBookingConstant.getHotelLink().click();
+	webDriverCommonUtils.waitForElementDisplayed(hotelBookingConstant
+		.getLocalityTextBox());
 	hotelBookingConstant.getLocalityTextBox().sendKeys(
 		"Indiranagar, Bangalore");
 	new Select(hotelBookingConstant.getTravellerSelection())
